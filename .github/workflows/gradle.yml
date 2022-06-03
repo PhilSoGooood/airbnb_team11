@@ -93,4 +93,4 @@ jobs:
         run: aws s3 cp --region ap-northeast-2 --acl private ./airbnb.zip s3://airbnb-phil-deploy-dockerimage/
 
       - name: Start CodeDeploy
-        run: aws deploy create-deployment --application-name Airbnb-Deploy-Application --deployment-group-name Airbnb-Deploy-Application-Group --s3-location bucket=airbnb-phil-deploy-dockerimage,key=airbnb.zip,bundleType=zip
+        run: aws deploy create-deployment --application-name Airbnb-Codedeploy-Application --deployment-group-name Airbnb-CodeDeploy-Target-Group --s3-location bucket=airbnb-phil-deploy-dockerimage,key=airbnb.zip,bundleType=zip
